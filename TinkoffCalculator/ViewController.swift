@@ -10,8 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-        guard let label = sender.titleLabel?.text else { return }
-        print(label)
+        guard let buttontext = sender.titleLabel?.text else { return }
+        print(buttontext)
     }
     
     override func viewDidLoad() {
