@@ -146,7 +146,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xR3-M7-mrj"/>
+                                    <action selector="equalButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bgv-5Z-jU1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ran-mx-66B">
@@ -158,7 +158,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="unZ-a9-T3D"/>
+                                    <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eIq-Cv-Qot"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZl-2r-a3A">
@@ -170,7 +170,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tAu-5s-hqq"/>
+                                    <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R9Z-ke-0Qr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xoa-J2-UPA">
@@ -182,7 +182,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AYz-pz-l5V"/>
+                                    <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vUL-yi-igK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KG-Xm-51K">
@@ -194,7 +194,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bRf-OZ-cDD"/>
+                                    <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvM-qo-kaz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLY-Cr-mmg">
@@ -218,9 +218,15 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OkG-LU-9i4"/>
+                                    <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rog-E8-Nxg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22222" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZHV-7J-PlL">
+                                <rect key="frame" x="20" y="232.99999999999997" width="353" height="71.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -235,6 +241,7 @@
                             <constraint firstItem="ran-mx-66B" firstAttribute="bottom" secondItem="EZl-2r-a3A" secondAttribute="top" id="855-GH-UUu"/>
                             <constraint firstItem="k75-vD-gAP" firstAttribute="leading" secondItem="oOx-ud-BuQ" secondAttribute="trailing" id="9LW-dd-wsN"/>
                             <constraint firstItem="hxi-za-NwD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AS6-zW-oxp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZHV-7J-PlL" secondAttribute="trailing" constant="20" id="BLz-Bd-sfF"/>
                             <constraint firstItem="SLo-G2-kSI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fff-Yj-OUx"/>
                             <constraint firstItem="M5k-tH-aw2" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="GOF-vC-9Ek"/>
                             <constraint firstItem="H2C-LZ-hV0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GT2-3G-Lqw"/>
@@ -243,6 +250,7 @@
                             <constraint firstItem="SLo-G2-kSI" firstAttribute="bottom" secondItem="oOx-ud-BuQ" secondAttribute="top" id="Ja7-IA-JCu"/>
                             <constraint firstItem="Xoa-J2-UPA" firstAttribute="leading" secondItem="aMk-Ai-keJ" secondAttribute="trailing" id="JvU-Lp-IUb"/>
                             <constraint firstItem="hxi-za-NwD" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.75" id="KUT-ix-ceU"/>
+                            <constraint firstItem="ZHV-7J-PlL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Kgt-Pr-wxI"/>
                             <constraint firstItem="SLo-G2-kSI" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="LbC-XM-bKB"/>
                             <constraint firstItem="1Ql-FT-D0H" firstAttribute="leading" secondItem="SLo-G2-kSI" secondAttribute="trailing" id="LbT-Ro-b0M"/>
                             <constraint firstItem="Xoa-J2-UPA" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="LoK-Zz-MuU"/>
@@ -250,6 +258,7 @@
                             <constraint firstItem="SLo-G2-kSI" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="Oo6-AT-R96"/>
                             <constraint firstItem="RLY-Cr-mmg" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="PBR-2J-vO3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RLY-Cr-mmg" secondAttribute="bottom" id="R1m-WI-fBI"/>
+                            <constraint firstItem="hxi-za-NwD" firstAttribute="top" secondItem="ZHV-7J-PlL" secondAttribute="bottom" constant="20" id="S7F-08-jBG"/>
                             <constraint firstItem="M5k-tH-aw2" firstAttribute="leading" secondItem="JBy-Av-yvo" secondAttribute="trailing" id="SO9-SY-Qca"/>
                             <constraint firstItem="oOx-ud-BuQ" firstAttribute="bottom" secondItem="zcs-Pa-Cp1" secondAttribute="top" id="Ssq-Ox-oOJ"/>
                             <constraint firstItem="JBy-Av-yvo" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="TfC-ht-cD3"/>
@@ -300,6 +309,9 @@
                             <constraint firstItem="1Ql-FT-D0H" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="zRa-ee-vNC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="ZHV-7J-PlL" id="jKz-SN-KmP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
