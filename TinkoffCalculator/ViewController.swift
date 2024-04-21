@@ -104,10 +104,36 @@ class ViewController: UIViewController {
         self.resetLabelText()
     }
     
+    @IBAction func showCalculationList(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let calculationListVC = sb.instantiateViewController(identifier: "CalculationListViewController")
+        if let vc = calculationListVC as? CalculationListViewController {
+            let result = calculationHistory.isEmpty && self.label.text == "0" ? "NoData" : self.label.text
+            vc.result = result
+        }
+//        self.show(calculationListVC, sender: self)
+        self.navigationController?.pushViewController(calculationListVC, animated: true)
+    }
+    
+//    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
+//        
+//    }
+    
+//    @IBAction override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard segue.identifier == "CalculationList",
+//              let calculationListVC = segue.destination as? CalculationListViewController else { return }
+//        calculationListVC.result = self.label.text
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.resetLabelText()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//    }
     
     private func calculate() throws -> Double {
         guard case .number(let firstNumber) = calculationHistory[0] else { return 0 }
