@@ -326,6 +326,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Калькулятор" id="ma0-dK-KpK"/>
                     <connections>
+                        <outlet property="historyButton" destination="1mD-eK-wA5" id="XXT-NK-34d"/>
                         <outlet property="label" destination="ZHV-7J-PlL" id="jKz-SN-KmP"/>
                     </connections>
                 </viewController>
@@ -341,31 +342,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbD-zN-Qpf">
-                                <rect key="frame" x="196.66666666666666" y="426" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-4g-I8a">
-                                <rect key="frame" x="157" y="355" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Urc-ht-IIo">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w2e-t4-cO4"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="PbD-zN-Qpf" firstAttribute="centerY" secondItem="VkS-x7-t3a" secondAttribute="centerY" id="JDE-te-lp5"/>
-                            <constraint firstItem="PbD-zN-Qpf" firstAttribute="centerX" secondItem="VkS-x7-t3a" secondAttribute="centerX" id="bod-ZP-JYE"/>
-                            <constraint firstItem="eCL-4g-I8a" firstAttribute="centerX" secondItem="VkS-x7-t3a" secondAttribute="centerX" id="eG8-RN-0V6"/>
-                            <constraint firstItem="PbD-zN-Qpf" firstAttribute="top" secondItem="eCL-4g-I8a" secondAttribute="bottom" constant="50" id="gdL-3o-eH4"/>
+                            <constraint firstAttribute="trailing" secondItem="Urc-ht-IIo" secondAttribute="trailing" id="7LW-SH-eWq"/>
+                            <constraint firstItem="w2e-t4-cO4" firstAttribute="bottom" secondItem="Urc-ht-IIo" secondAttribute="bottom" id="SSn-Q4-6ns"/>
+                            <constraint firstItem="Urc-ht-IIo" firstAttribute="leading" secondItem="w2e-t4-cO4" secondAttribute="leading" id="TIG-nL-Nbn"/>
+                            <constraint firstItem="Urc-ht-IIo" firstAttribute="top" secondItem="w2e-t4-cO4" secondAttribute="top" id="sUE-Sz-xzC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Прошлые вычисления" id="7Et-Fv-ejN"/>
                     <connections>
-                        <outlet property="calculationLabel" destination="PbD-zN-Qpf" id="KXL-43-dj0"/>
+                        <outlet property="calculationTableView" destination="Urc-ht-IIo" id="73f-sg-tfs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yju-3P-d1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -394,19 +387,19 @@
     <resources>
         <image name="clock" catalog="system" width="128" height="123"/>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

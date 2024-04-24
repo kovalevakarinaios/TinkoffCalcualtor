@@ -49,9 +49,17 @@ class ViewController: UIViewController {
         return numberFormatter
     }()
     
+    lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter
+    }()
+    
     var calculationHistory: [CalcuationHistoryItem] = []
+    var calculations: [CalculationHistory] = []
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var historyButton: UIButton!
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let buttontext = sender.titleLabel?.text else { return }
@@ -75,7 +83,6 @@ class ViewController: UIViewController {
               let labelNumber = self.numberFormatter.number(from: labelText)?.doubleValue
         else { return }
         
-        
         self.calculationHistory.append(.number(labelNumber))
         self.calculationHistory.append(.operation(buttonOperation))
         
@@ -92,7 +99,7 @@ class ViewController: UIViewController {
         do {
             let result = try self.calculate()
             self.label.text = self.numberFormatter.string(from: NSNumber(value: result))
-            
+            self.makeCalculationHistory(result: result)
         } catch {
             self.label.text = "Ошибка"
         }
@@ -108,33 +115,17 @@ class ViewController: UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let calculationListVC = sb.instantiateViewController(identifier: "CalculationListViewController")
         if let vc = calculationListVC as? CalculationListViewController {
-            let result = calculationHistory.isEmpty && self.label.text == "0" ? "NoData" : self.label.text
-            vc.result = result
+            vc.calculations = self.calculations
         }
-//        self.show(calculationListVC, sender: self)
         self.navigationController?.pushViewController(calculationListVC, animated: true)
     }
-    
-//    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
-//        
-//    }
-    
-//    @IBAction override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard segue.identifier == "CalculationList",
-//              let calculationListVC = segue.destination as? CalculationListViewController else { return }
-//        calculationListVC.result = self.label.text
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.resetLabelText()
+        self.historyButton.accessibilityIdentifier = "historyButton"
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
-//    }
-    
+
     private func calculate() throws -> Double {
         guard case .number(let firstNumber) = calculationHistory[0] else { return 0 }
         
@@ -152,6 +143,22 @@ class ViewController: UIViewController {
 
     private func resetLabelText() {
         self.label.text = "0"
+    }
+    
+    private func makeCalculationHistory(result: Double) {
+        let currentDate = self.dateFormatter.string(from: Date())
+        let currentCalculation = Calculation(expression: self.calculationHistory, result: result)
+        var calculationAdded = false
+        for (index, calc) in self.calculations.enumerated() {
+            if calc.date == currentDate {
+                self.calculations[index].calculation.append(currentCalculation)
+                calculationAdded = true
+                break
+            }
+        }
+        if calculationAdded != true {
+            self.calculations.append(CalculationHistory(date: currentDate, calculation: [currentCalculation]))
+        }
     }
 }
 

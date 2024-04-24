@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024030962BD589DC0003CCD2 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024030942BD589DC0003CCD2 /* HistoryTableViewCell.swift */; };
+		024030972BD589DD0003CCD2 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 024030952BD589DC0003CCD2 /* HistoryTableViewCell.xib */; };
 		0260F2282BB2DE0F00AB3550 /* TinkoffCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260F2272BB2DE0F00AB3550 /* TinkoffCalculatorUITests.swift */; };
 		0260F22A2BB2DE0F00AB3550 /* TinkoffCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260F2292BB2DE0F00AB3550 /* TinkoffCalculatorUITestsLaunchTests.swift */; };
 		0260F2372BB2DE4400AB3550 /* TinkoffCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260F2362BB2DE4400AB3550 /* TinkoffCalculatorTests.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		024030942BD589DC0003CCD2 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		024030952BD589DC0003CCD2 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		0260F2252BB2DE0F00AB3550 /* TinkoffCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0260F2272BB2DE0F00AB3550 /* TinkoffCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITests.swift; sourceTree = "<group>"; };
 		0260F2292BB2DE0F00AB3550 /* TinkoffCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -78,6 +82,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		024030932BD589AE0003CCD2 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				02E790162BD52F1D00A85BB7 /* CalculationListViewController.swift */,
+				024030942BD589DC0003CCD2 /* HistoryTableViewCell.swift */,
+				024030952BD589DC0003CCD2 /* HistoryTableViewCell.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		0260F2262BB2DE0F00AB3550 /* TinkoffCalculatorUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +134,8 @@
 			children = (
 				028E11422B766449006F6832 /* AppDelegate.swift */,
 				028E11442B766449006F6832 /* SceneDelegate.swift */,
+				024030932BD589AE0003CCD2 /* History */,
 				028E11462B766449006F6832 /* ViewController.swift */,
-				02E790162BD52F1D00A85BB7 /* CalculationListViewController.swift */,
 				028E11482B766449006F6832 /* Main.storyboard */,
 				028E114B2B76644D006F6832 /* Assets.xcassets */,
 				028E114D2B76644D006F6832 /* LaunchScreen.storyboard */,
@@ -250,6 +264,7 @@
 			files = (
 				028E114F2B76644D006F6832 /* LaunchScreen.storyboard in Resources */,
 				028E114C2B76644D006F6832 /* Assets.xcassets in Resources */,
+				024030972BD589DD0003CCD2 /* HistoryTableViewCell.xib in Resources */,
 				028E114A2B766449006F6832 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +297,7 @@
 				028E11472B766449006F6832 /* ViewController.swift in Sources */,
 				028E11432B766449006F6832 /* AppDelegate.swift in Sources */,
 				028E11452B766449006F6832 /* SceneDelegate.swift in Sources */,
+				024030962BD589DC0003CCD2 /* HistoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
