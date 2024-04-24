@@ -11,6 +11,10 @@ enum CalculationError: Error {
     case dividedByZero
 }
 
+enum CalculationHistoryItemError: Error {
+    case itemNotFound
+}
+
 enum Operation: String {
     case add = "+"
     case subtract = "-"
@@ -40,6 +44,8 @@ enum CalcuationHistoryItem {
 }
 
 class ViewController: UIViewController {
+    
+    let calculationHistoryStorage = CalculationHistoryStorage()
     
     lazy var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
@@ -100,6 +106,7 @@ class ViewController: UIViewController {
             let result = try self.calculate()
             self.label.text = self.numberFormatter.string(from: NSNumber(value: result))
             self.makeCalculationHistory(result: result)
+            self.calculationHistoryStorage.setHistory(calculation: self.calculations)
         } catch {
             self.label.text = "Ошибка"
         }
@@ -124,6 +131,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.resetLabelText()
         self.historyButton.accessibilityIdentifier = "historyButton"
+        self.calculations = self.calculationHistoryStorage.loadHistory()
     }
 
     private func calculate() throws -> Double {

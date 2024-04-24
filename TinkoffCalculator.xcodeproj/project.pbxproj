@@ -19,6 +19,7 @@
 		028E114C2B76644D006F6832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 028E114B2B76644D006F6832 /* Assets.xcassets */; };
 		028E114F2B76644D006F6832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028E114D2B76644D006F6832 /* LaunchScreen.storyboard */; };
 		02E790172BD52F1D00A85BB7 /* CalculationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E790162BD52F1D00A85BB7 /* CalculationListViewController.swift */; };
+		02F3848D2BD9537E00030F05 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F3848C2BD9537E00030F05 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		028E114E2B76644D006F6832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		028E11502B76644D006F6832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02E790162BD52F1D00A85BB7 /* CalculationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationListViewController.swift; sourceTree = "<group>"; };
+		02F3848C2BD9537E00030F05 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		028E11412B766449006F6832 /* TinkoffCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				02F3848B2BD9532300030F05 /* Storage */,
 				028E11422B766449006F6832 /* AppDelegate.swift */,
 				028E11442B766449006F6832 /* SceneDelegate.swift */,
 				024030932BD589AE0003CCD2 /* History */,
@@ -142,6 +145,14 @@
 				028E11502B76644D006F6832 /* Info.plist */,
 			);
 			path = TinkoffCalculator;
+			sourceTree = "<group>";
+		};
+		02F3848B2BD9532300030F05 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				02F3848C2BD9537E00030F05 /* Storage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 				028E11432B766449006F6832 /* AppDelegate.swift in Sources */,
 				028E11452B766449006F6832 /* SceneDelegate.swift in Sources */,
 				024030962BD589DC0003CCD2 /* HistoryTableViewCell.swift in Sources */,
+				02F3848D2BD9537E00030F05 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

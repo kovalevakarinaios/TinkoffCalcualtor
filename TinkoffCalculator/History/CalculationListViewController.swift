@@ -7,16 +7,6 @@
 
 import UIKit
 
-struct CalculationHistory {
-    let date: String
-    var calculation: [Calculation]
-}
-
-struct Calculation {
-    let expression: [CalcuationHistoryItem]
-    let result: Double
-}
-
 class CalculationListViewController: UIViewController {
    
     var calculations: [CalculationHistory] = []
